@@ -1,0 +1,567 @@
+/* Apply variables to above imported styles */
+/* @import "./styleVariables.css"; */
+
+
+/* --------------------------------------- App/showcase skin specific 
+Styles that are only used for the skin of the showcase environment. These do not appear in or affect AssetSphere components, elements etc. 
+*/
+
+html, body {
+    font-family: Roboto, Roboto Light, RobotoBlack, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #222;
+    background-color: #F6F7F8;
+    font-size: 14px;
+    /* text-align: left; */
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.sideNav {
+    display:flex;
+    position:relative;
+    left: 0px;
+    top:0px;
+    bottom: 0px;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 240px;
+    max-width: 240px;
+    height: 100vh;
+    background-color: #F9FAFB;
+    z-index: 2;
+    margin: 0px;
+    padding: 0px;
+  }
+
+.topNav {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    color: #FFF;
+    background-color: #222;
+    z-index: 2;
+    text-align: left;
+    padding: 20px;
+    display: none;
+}
+
+.demoContent {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    background-color: #F6F7F8;
+}
+
+.bodyContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* .contentArea {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    background-color: #F6F7F8;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+} */
+/* --------------------------------------- tables/grid */
+
+table {
+    border-collapse: collapse;
+    font-family: Roboto, Roboto Light, RobotoBlack, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #222;
+    background-color: #F6F7F8;
+    font-size: 14px;
+    /* text-align: left; */
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+td {
+    text-align: left;
+}
+
+tr {
+    width: 100%;
+    height: 48px;
+    border-bottom: 1px #ddd solid;
+}
+
+
+
+/* --------------------------------------- Default typography */
+
+h1 {
+    font-family: Roboto Bold, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #222222;
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: left;
+}
+
+h2 {
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #222222;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: left;
+}
+
+h3 {
+    font-family: Roboto Light, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #222222;
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+}
+
+h4 {
+    font-family: Roboto;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px; /* 130.769% */
+    margin: 0px;
+    pad: 0px;
+}
+
+p, .paragraphSmall {
+    font-family: Roboto Light;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 18px;
+    letter-spacing: -0.2px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.paragraphMedium {
+    font-family: Roboto Light;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    margin: 0px;
+    padding: 0px;
+}
+
+small {
+    font-family: Roboto Light, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #222222;
+    font-size: 11px;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* --------------------------------------- Assets CSS 
+Generic/global classes used repetitively throughout components/element/pages/layouts etc. (not the showcase/demo)
+*/
+
+.hideMe {
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+
+/* .GridTableRow {
+    height: 100px;
+} */
+
+.titleContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    height: auto;
+}
+
+.subtitleContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content:flex-start;
+
+}
+
+/* Icon styles */
+
+.productIcon {
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    border-radius: none;
+}
+
+button.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button.icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+button.icon svg path,
+button.icon svg polygon,
+button.icon svg rect {
+    fill: #fff;
+}
+
+button.icon svg circle {
+    stroke: #fff;
+    stroke-width: 0;
+}
+
+/* Buttons */
+
+button {
+    font-family: Roboto Light, Roboto bold, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    padding: none;
+    color: inherit;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    text-align: left;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button.buttonPrimary {
+    padding: 10px 20px 10px 20px;
+	color: white;
+	background: dodgerblue;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    width: auto;
+    height: auto;
+    height: min-content;
+}
+
+button.buttonSecondary {
+	padding: 10px 20px 10px 20px;
+	color: dodgerblue;
+	background: transparent;
+    border: 1px solid dodgerblue;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    width: auto;
+    height: min-content;
+}
+
+button.small {
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #95979F;
+    letter-spacing: 0.4px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 4px 8px 4px 8px;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+}
+
+button.small:hover {
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    animation-duration: 1.0;
+}
+
+button.icon {
+    width: 24px;
+    height: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    background-color: dodgerblue;
+    border-radius: 100%;
+    transition: opacity 0.3s ease;
+}
+
+button.icon:hover {
+    opacity: 50%;
+}
+
+
+
+/* --------------------------------------- Components CSS 
+Component specific CSS (A reusable chunk of elements, code etc.)
+*/
+
+/*  Product summary card component */
+
+#productSummaryCard {
+    border: #e3e3e3 solid 1px;
+    padding-left: 60px;
+    padding-top: 40px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: auto;
+    max-width: 300px; /* temp */
+}
+
+#productSummaryCard:hover {
+    border: dodgerblue solid 3px;
+    padding-left: 58px;
+    padding-top: 38px;
+    padding-right: 58px;
+    padding-bottom: 38px;
+}
+
+#productSummaryCard .productIcon {
+    box-sizing: border-box;
+    border-radius: 100%;
+    min-width: 28px;
+    min-height: 28px;
+    border: dodgerblue solid 8px; /* temp */
+}
+
+#productSummaryCard .productName {
+    width: 100%;
+}
+
+#productSummaryCard .tilesContainer {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+#productSummaryCard #tileMain {
+    width: auto;
+}
+
+
+/*  Tile component  */
+
+.tilesContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    }
+
+#tileMain {
+    width: 100%;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    flex-flow: column;
+    justify-content: center;
+    border: none;
+    background: white;
+    padding: 20px 32px 20px 32px;
+    gap: 2px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow:  0px 8px 44px 0px rgba(34, 34, 34, 0.05);
+}
+
+
+/*  Tab component  */
+
+#tabsMain {
+
+}
+
+.tabMenuContainer {
+    width: 100%;
+}
+
+.tabMenuContainer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    height:fit-content;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-items: flex-start;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+}
+.tabMenuContainer ul li {
+    display: flex;
+    flex-direction: row;
+    justify-items: stretch;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    border-radius: 4px 4px 0px 0px;
+}
+.tabMenuContainer ul li button{ 
+    color: var(--grey-medium, #95979F);
+    display: flex;
+    flex-direction: row;
+    justify-items: stretch;
+    margin: 0;
+    padding: 12px 16px 12px 16px;
+    height: auto;
+    border-radius: 4px 4px 0px 0px;
+}
+.tabMenuContainer ul li:hover {
+    background-color: #ECEDF1;
+}
+
+.tabMenuContainer ul li.active button {
+    color: var(--grey-dark, #222);
+    background-color: #ECEDF1;
+    border-bottom: 4px solid dodgerblue;
+    margin-bottom: -2px;
+    padding: 12px 16px 10px 16px;
+}
+
+/* --------------------------------------- Elements CSS 
+Element specific CSS (the smaller pieces that make a part of components, page layouts etc.) 
+*/
+
+/* Status elements colours */
+
+div#status { 
+    height: 8px;
+    width: 8px;
+    margin-bottom: 4px;
+    border-radius: 100%;
+}
+
+#status.default {
+    background-color: #95979F;
+}
+
+#status.positive {
+    background-color: #38C936;
+}
+
+#status.warning {
+    background-color: #FF8800;
+}
+
+#status.negative {
+    background-color: #FF0011;
+}
+
+#status.none {
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+}
+
+
+/* Hero title element */
+
+#heroTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#heroTitle .subtitleContainer{
+    margin-left: 32px;
+}
+
+
+/* Results numeric counter element */
+
+#resultsContainer {
+    padding: 4px 6px 4px 6px;
+    margin: 0px;
+    background-color: #ECEDF1;
+    color: #95979F;
+    font-size: 12px;
+    font-weight: 400 !important; 
+    text-align: center;
+    border-radius: 4px;
+    letter-spacing: 0.2px;
+}
+
+
+/*  Product title element */
+
+#productTitleContainer {
+    flex-direction: row;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+#productTitleContainer .productName {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    height: auto;
+}
+
+#productTitleContainer .productIcon {
+    min-height: 24px;
+    min-width: 24px;
+    background-color: dodgerblue;
+    border-radius: 8px;
+}
+
+
+/* --------------------------------- Page structure styles */
+
+.pageContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.titleSection {
+    width: 100%;
+    height: fit-content;
+}
+
+.titleSection.flexcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
