@@ -58,13 +58,15 @@
     }
 
     li.menuVertical :hover {
-        background: lightgray;
+        background: var(--menuItemHoverBackground, lightgray);
+        color: var(--menuItemHoverColor, black)
     }
 
     li.menuVertical .active {
 		font-weight: bold;
-        border-left: solid 3px blue;
-        background: lightgray;
+        border-left: var(--menuItemActiveBorderLeft, solid 3px blue);
+        background: var(--menuItemActiveBackground, lightgray);
+        color: var(--menuItemActiveColor, black);
 	}
 
     li.menuVertical button {
@@ -75,7 +77,7 @@
         text-align: left;
         background: transparent;
         border: none;
-        color: black
+        color: var(--menuItemColor, black);
     }
 
     li.menuVertical button:hover {

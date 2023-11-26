@@ -1,6 +1,10 @@
 {
 	"name": "svelte-side-navigation-component",
 	"version": "0.0.1",
+	"author": {
+		"name": "Marius F Rossouw"
+	},
+	"license": "ISC",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",

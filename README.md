@@ -1,58 +1,187 @@
-# create-svelte
+# svelte-side-navigation-menu-component
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Installation
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
+1. Ensure you have node installed on your OS (v19 and above - recommended)
+2. Navigate to the app where you would like to use the component and run the following in your terminal
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install svelte-side-navigation-menu-component --save
 ```
 
-## Developing
+## How to use the component
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+1. Inside the script tag of your .svelte file 
+```javascript
+import { Menu } from 'svelte-side-navigation-menu-component'
+```
+2. Inside an HTML element use the imported Menu component like so
+```javascript
+<Menu {menu} {role} menuName={"MySideNav"} on:menuClicked={handleClick}/>
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+## Props, handlers
+1. ```{menu}``` Required, Array with all the menu items
+2. ```{role}``` Optional, String to filter the menu items to be displayed
+3. ```{menuName}``` Optional, String as a name for your menu
+4. ```on:menuClicked``` Optional, a function to handle menu item clicks (re-routing will happen if there is a route spesified inside the goto)
 
-## Building
 
-To build your library:
+## Example
+```+layout.svelte```
+``` javascript
+    <script>
+    import Menu from "$lib/Menu/Menu.svelte";
 
-```bash
-npm run package
+    let menu = [
+        {
+            label: "Home",
+            goto: "/",
+            roles: ["superAdmin", "admin"],
+            subMenu: [],
+        },
+        {
+            label: "Level 1.1",
+            goto: "",
+            roles: ["superAdmin", "admin"],
+            subMenu: [
+                {
+                    label: "Level 2.1.1",
+                    goto: "",
+                    roles: ["superAdmin", "admin"],
+                    subMenu: [
+                        {
+                            label: "Level 3.1.1",
+                            goto: "/",
+                            roles: ["superAdmin", "admin"],
+                            subMenu: [],
+                        },
+                    ],
+                },
+                {
+                    label: "Level 2.1.2",
+                    goto: "/",
+                    roles: ["superAdmin", "admin"],
+                    subMenu: [],
+                },
+                {
+                    label: "Level 2.1.3",
+                    goto: "/",
+                    roles: ["superAdmin", "admin"],
+                    subMenu: [],
+                },
+                {
+                    label: "Level 2.1.4",
+                    goto: "/",
+                    roles: ["superAdmin", "admin"],
+                    subMenu: [],
+                },
+            ],
+        },
+        {
+            label: "Level 1.2",
+            goto: "",
+            roles: ["superAdmin", "admin"],
+            subMenu: [
+                {
+                    label: "Level 2.2.1",
+                    goto: "/",
+                    roles: ["superAdmin", "admin"],
+                    subMenu: [],
+                },
+                {
+                    label: "Level 2.2.2",
+                    goto: "/",
+                    roles: ["superAdmin", "admin"],
+                    subMenu: [],
+                },
+            ],
+        },
+        {
+            label: "Level 1.3",
+            goto: "",
+            roles: ["superAdmin"],
+            subMenu: [
+                {
+                    label: "Level 2.3.1",
+                    goto: "/",
+                    roles: ["superAdmin"],
+                    subMenu: [],
+                },
+                {
+                    label: "Level 2.3.2",
+                    goto: "/",
+                    roles: ["superAdmin"],
+                    subMenu: [],
+                },
+            ],
+        },
+    ];
+
+    let role = 'superAdmin'
+
+    function handleClick(event) {
+        console.log(event.detail.menuItem);
+    }
+</script>
+
+<div class="bodyContainer">
+    <div class="sideNav">
+        <Menu {menu} {role} menuName={"MyTestSideNav"} on:menuClicked={handleClick} />
+    </div>
+    <div class="demoContent">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .bodyContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .sideNav {
+        display: flex;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 240px;
+        max-width: 240px;
+        height: 100vh;
+        background-color: #f9fafb;
+        z-index: 2;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .demoContent {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        width: 100%;
+        height: 100%;
+        background-color: #f6f7f8;
+    }
+</style>
 ```
 
-To create a production version of your showcase app:
 
-```bash
-npm run build
+## Styling
+Can be set with variables associated with every element
+```css
+--menuItemHoverBackground
+--menuItemHoverColor
+--menuItemActiveBorderLeft
+--menuItemActiveBackground
+--menuItemActiveColor
+--menuItemColor
 ```
 
-You can preview the production build with `npm run preview`.
+## Feedback and recommendations
+Please send me feedback or recommendations for improvements at mariusrossouwcr@gmail.com. I would love to here from you. [Donations](https://www.paypal.com/paypalme/MariusFRossouw) are welcome but not necessary.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
