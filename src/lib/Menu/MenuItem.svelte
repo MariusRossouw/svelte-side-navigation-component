@@ -10,7 +10,7 @@
     let pl = JSON.parse(JSON.stringify(paddingLeft))
 
     if(!menuItem.componentId) {
-        menuItem.componentId = crypto.randomUUID()
+        menuItem.componentId = Math.random().toString(36).substring(2) + Date.now().toString(36);
     }
 
     let activeComponentId = getContext('active')

@@ -13,7 +13,7 @@
 
     export let role = 'ALL';
     export let menu;
-    export let menuName = crypto.randomUUID()
+    export let menuName = Math.random().toString(36).substring(2) + Date.now().toString(36);
 
     export let activeComponentID = ""
 
