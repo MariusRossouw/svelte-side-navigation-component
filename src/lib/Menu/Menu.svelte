@@ -15,12 +15,17 @@
     export let menu;
     export let menuName = crypto.randomUUID()
 
+    export let activeComponentID = ""
+
     let activeComponentId = writable(null)
 
     setContext('collapse', collapse) // should only show one expanded submenu at a time
     setContext('active', activeComponentId) // the active menuItem
 
     onMount(() => {
+        if(activeComponentID != "") {
+            $activeComponentId = activeComponentID
+        }
         // let a = localStorage.getItem(menuName);
         // if(a) {
         //     menu = JSON.parse(a);

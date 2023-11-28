@@ -4,6 +4,7 @@
     let menu = [
         {
             label: "Home",
+            componentId: "home",
             goto: "/",
             roles: ["superAdmin", "admin"],
             subMenu: [],
@@ -95,7 +96,7 @@
 
 <div class="bodyContainer">
     <div class="sideNav">
-        <Menu {menu} {role} menuName={"MyTestSideNav"} on:menuClicked={handleClick} />
+        <Menu {menu} {role} activeComponentID={"home"} menuName={"MyTestSideNav"} on:menuClicked={handleClick} />
     </div>
     <div class="demoContent">
         <slot />

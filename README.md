@@ -23,6 +23,7 @@ import { Menu } from 'svelte-side-navigation-menu-component'
 1. ```{menu}``` Required, Array with all the menu items
 2. ```{role}``` Optional, String to filter the menu items to be displayed
 3. ```{menuName}``` Optional, String as a name for your menu
+4. ```activeComponentID={"home"}``` Optional, String to set default menu item to be selected
 4. ```on:menuClicked``` Optional, a function to handle menu item clicks (re-routing will happen if there is a route spesified inside the goto)
 
 
@@ -35,6 +36,7 @@ import { Menu } from 'svelte-side-navigation-menu-component'
     let menu = [
         {
             label: "Home",
+            componentId: "home",
             goto: "/",
             roles: ["superAdmin", "admin"],
             subMenu: [],
@@ -126,7 +128,7 @@ import { Menu } from 'svelte-side-navigation-menu-component'
 
 <div class="bodyContainer">
     <div class="sideNav">
-        <Menu {menu} {role} menuName={"MyTestSideNav"} on:menuClicked={handleClick} />
+        <Menu {menu} {role} activeComponentID={"home"} menuName={"MyTestSideNav"} on:menuClicked={handleClick} />
     </div>
     <div class="demoContent">
         <slot />
